@@ -9,8 +9,14 @@
           <el-submenu index="1">
             <template slot="title">管理选项</template>
             <el-menu-item-group>
-              <el-menu-item index="1-1"><router-link to="/user">用户管理</router-link></el-menu-item>
-              <el-menu-item index="1-2"><router-link to="/question">题目管理</router-link></el-menu-item>
+              <el-menu-item index="1-1"
+                ><router-link to="/user">用户管理</router-link></el-menu-item
+              >
+              <el-menu-item index="1-2"
+                ><router-link to="/question"
+                  >题目管理</router-link
+                ></el-menu-item
+              >
             </el-menu-item-group>
 
             <!-- <el-menu-item-group title="分组2">
@@ -101,6 +107,13 @@
               </el-popover>
             </template>
           </el-table-column>
+
+          <el-table-column label="密码" width="180">
+            <template slot-scope="scope">
+              <span style="margin-left: 10px">{{ scope.row.password}}</span>
+            </template>
+          </el-table-column>
+
           <el-table-column label="操作">
             <template slot-scope="scope">
               <el-button
@@ -133,7 +146,10 @@
               <el-input v-model="form.password" autocomplete="off"></el-input>
             </el-form-item>
             <el-form-item label="确认密码" :label-width="formLabelWidth">
-              <el-input v-model="form.confirmpassword" autocomplete="off"></el-input>
+              <el-input
+                v-model="form.confirmpassword"
+                autocomplete="off"
+              ></el-input>
             </el-form-item>
             <!-- <el-form-item label="活动区域" :label-width="formLabelWidth">
               <el-select v-model="form.region" placeholder="请选择活动区域">
@@ -158,13 +174,13 @@
 export default {
   data() {
     return {
-        dialogFormVisible: false,
+      dialogFormVisible: false,
 
-        form: {
-          name: '',
-          passsword: '',
-          confirmpasssword: '',
-        },
+      form: {
+        name: "",
+        password: "",
+        confirmpassword: "",
+      },
       formInline: {
         user: "",
         region: "",
@@ -173,21 +189,25 @@ export default {
         {
           date: "2016-05-02",
           name: "王小虎",
+          password: "123456",
           address: "上海市普陀区金沙江路 1518 弄",
         },
         {
           date: "2016-05-04",
           name: "王小虎",
+          password: "123456",
           address: "上海市普陀区金沙江路 1517 弄",
         },
         {
           date: "2016-05-01",
           name: "王小虎",
+          password: "123456",
           address: "上海市普陀区金沙江路 1519 弄",
         },
         {
           date: "2016-05-03",
           name: "王小虎",
+          password: "123456",
           address: "上海市普陀区金沙江路 1516 弄",
         },
       ],
